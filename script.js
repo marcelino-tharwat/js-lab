@@ -1,73 +1,93 @@
-/// 1.1
+//---01
+// let studentsGrades = [60, 100, 10, 15, 85];
+// console.log(studentsGrades.sort((a, b) => b - a));
+// console.log(studentsGrades.find((g) => g >= 100));
+// console.log(studentsGrades.filter((g) => g <= 60));
 
-// let message = prompt("enter a message");
-// for (let i = 1; i <= 6; i++) {
-//   document.write("<h" + i + ">" + message + "</h" + i + ">");
-// }
+//---03
+// alert("Welcome to my site");
+// let userName = prompt("Enter your name");
+// document.write("welcome " + userName);
 
-///1.2
+//---04
+// let userEmail = prompt("Enter your email");
+// console.log(userEmail.includes("@"));
 
-// let num;
-// let sum = 0;
+//---05
+// const stringRegex = /^[A-Za-z\s]+$/;
+// const birthYearRegex = /^\d+$/;
 // do {
-//   num = Number(prompt("Enter a number"));
-//   sum += num;
-// } while (num !== 0 && sum <= 100);
-// console.log(sum);
+//   var userName = prompt("Enter your name");
+// } while (!stringRegex.test(userName));
+// do {
+//   var userBirthYear = prompt("Enter your birth year");
+// } while (
+//   !birthYearRegex.test(userBirthYear) ||
+//   Number(userBirthYear) >= 2010
+// );
+// let age = 2026 - userBirthYear;
+// document.writeln("Name: " + userName + "<br/>");
+// document.writeln("Birth year: " + userBirthYear + "<br/>");
+// document.writeln("Age: " + age);
 
-//1.3
+//---06
+// const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(com|net|edu|org)\.eg$/;
+// const fullNameRegex = /^[\p{L}]{3,}(?:\s[\p{L}]{3,})*$/u;
+// do {
+//   var userName = prompt("Enter your full name");
+// } while (!fullNameRegex.test(userName));
+// do {
+//   var userEmail = prompt("Enter your email");
+// } while (!emailRegex.test(userEmail));
 
-// remainder(10, 4, 5);
-// function remainder(x, y, z) {
-//   if (x % y == 0 && x % z == 0) {
-//     console.log(x + " is divisible by both " + y + " and " + z);
-//   } else if (x % y == 0) {
-//     console.log(x + " is divisible by " + y);
-//   } else if (x % z == 0) {
-//     console.log(x + " is divisible by " + z);
+//?String , data and RegExp Objects
+
+//---1.1
+// const stringRegex = /^[A-Za-z\s]+$/;
+// const singleCharRegex = /^[A-Za-z]$/;
+// do {
+//   var input = prompt("enter any word");
+// } while (!stringRegex.test(input));
+// do {
+//   var singleChar = prompt("Enter one Letter your need to count");
+// } while (!singleCharRegex.test(singleChar));
+// let isLetterCases = confirm();
+// let textToCheck = isLetterCases ? input : input.toLowerCase();
+// let charToCheck = isLetterCases ? singleChar : singleChar.toLowerCase();
+// let count = 0;
+// for (let i = 0; i < textToCheck.length; i++) {
+//   if (textToCheck[i] === charToCheck) {
+//     count++;
 //   }
 // }
+// console.log(
+//   "The letter " + singleChar + " appears " + count + " times in the text.",
+// );
 
-// 1.4
+//---1.2
+// let inputString = prompt("Enter a string to check if it's a palindrome:");
+// let isCaseSensitive = confirm("Do you want to consider case sensitivity?");
+// if (!isCaseSensitive) {
+//   inputString = inputString.toLowerCase();
+// }
+// let processedString = inputString.replace(/\s+/g, "");
+// let reversedString = processedString.split("").reverse().join("");
+// if (processedString === reversedString) {
+//   console.log(inputString + " is a palindrome.");
+// } else {
+//   console.log(inputString + " is not a palindrome.");
+// }
 
-// let x, y, z;
-
-// do {
-//   x = prompt("Enter number x");
-// } while (x === null || x === "" || isNaN(Number(x)));
-
-// x = Number(x);
-
-// do {
-//   y = prompt("Enter number y");
-// } while (y === null || y === "" || isNaN(Number(y)));
-
-// y = Number(y);
-
-// do {
-//   z = prompt('Enter "no" or "odd" or "even"');
-// } while (z === null || z === "" || (z !== "no" && z !== "odd" && z !== "even"));
-
-// let sum = 0;
-
-// rangeDisplay(x, y, z);
-
-// function rangeDisplay(x, y, z) {
-//   for (let i = x; i <= y; i++) {
-//     if (z === "no") {
-//       console.log(i);
-//       sum += i;
-//     }
-
-//     if (z === "odd" && i % 2 !== 0) {
-//       console.log(i);
-//       sum += i;
-//     }
-
-//     if (z === "even" && i % 2 == 0) {
-//       console.log(i);
-//       sum += i;
+//---1.3
+// function largestWord(str) {
+//   let words = str.split(" ");
+//   let maxWord = words[0];
+//   for (let i = 1; i < words.length; i++) {
+//     if (words[i].length > maxWord.length) {
+//       maxWord = words[i];
 //     }
 //   }
+//   return maxWord;
 // }
-// console.log("sum is= " + sum);
+// let input = "this is a javascript string demo";
+// console.log(largestWord(input));
